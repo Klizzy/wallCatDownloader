@@ -14,5 +14,7 @@ jobs:
                     go-version: ${{ matrix.go-version }}
             -   name: Checkout code
                 uses: actions/checkout@v2
+            -   name: Install dependencies
+                run: go get github.com/PuerkitoBio/goquery && go get github.com/gen2brain/beeep
             -   name: Build
                 run: go build main.go
